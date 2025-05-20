@@ -50,7 +50,7 @@ class HashTable:
       
 def get_weather_for_day(day): # функция парсинга данных с сайта с погодой
     if day == 1:
-        url = 'https://www.accuweather.com/en/lv/riga/225780/weather-tomorrow/225780'
+        url = 'https://www.accuweather.com/en/lv/riga/225780/weather-today/225780'
     elif day == 2:
         url = 'https://www.accuweather.com/en/lv/riga/225780/weather-tomorrow/225780'
     else:
@@ -170,15 +170,15 @@ def processWeather(ratiotemperature, ratioprecipitation): # цикл начал�
     print("🔍 Let's find out which day is the best!🔍")
 
     while True:
-        print("📅 Enter number of days to analyze (1 - 31)")
+        print("📅 Enter number of days to analyze (1 - 61)")
 
         try:
             numberofdays = int(input()) # Пробуем преобразовать в int
         except ValueError: # Если не получилось (например, введено "abc")
             print("⚠️ Error: Input must be number")
             continue
-        if numberofdays < 1 or numberofdays > 31:
-            print("⚠️ Error: Input must be in range (1 - 31)")
+        if numberofdays < 1 or numberofdays > 61:
+            print("⚠️ Error: Input must be in range (1 - 61)")
             continue
 
         print(f"🌤️  Select how many top weather days to show from the next {numberofdays} days: ") 
